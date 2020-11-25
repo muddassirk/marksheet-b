@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="#" onsubmit="check()">
+        <h1> Percentage </h1>
+
+        <input type="number" id="ObtnMarks" required placeholder="Enter you Obtained marks">
+        <input type="number" id="totlMarks" required placeholder="Enter you total marks">
+
+        <button>submit</button>
+    </form>
+
+    <p id="resultForPercentage"></p>
+
+
+    <form action="#" onsubmit="gradeCheck()">
+        <h1> Grade</h1>
+
+        <input type="number" id="percnet" required placeholder="Enter you Percentage marks">
+        
+
+        <button>submit</button>
+    </form>
+
+    <p id="resultForGrade"></p>
+
+
+
+    <script>
+        function check(){
+            let ObtnMarks = document.getElementById("ObtnMarks").value;
+            let totlMarks = document.getElementById("totlMarks").value;
+            ObtnMarks = parseFloat(ObtnMarks);
+            totlMarks = parseFloat(totlMarks);
+
+            // console.log((ObtnMarks*100)/totlMarks)
+            let resultForPercentage = document.getElementById("resultForPercentage");
+            
+            resultForPercentage.innerText = (  ((ObtnMarks*100)/totlMarks).toFixed(0) + '%'  )
+
+            
+            
+        }
+
+
+  
+
+        function gradeCheck() {
+            let percnet = document.getElementById("percnet").value;
+            percnet = parseFloat(percnet);
+
+
+            
+
+            if (percnet >= 80 && percnet <= 100) {
+                document.getElementById("resultForGrade").innerHTML = "<h1>  A+ Grade </h1>"
+            }
+            else if (percnet >= 70 && percnet <= 79) {
+                document.getElementById("resultForGrade").innerHTML = "<h1>  A Grade </h1>"
+            }
+            else if (percnet >= 60 && percnet <= 69) {
+                document.getElementById("resultForGrade").innerHTML = "<h1>  B Grade </h1>"
+            }
+            else if (percnet >= 50 && percnet <= 59) {
+                document.getElementById("resultForGrade").innerHTML = "<h1>  C Grade </h1>"
+            }
+            else if (percnet >= 45 && percnet <= 49) {
+                document.getElementById("resultForGrade").innerHTML = "<h1>  D Grade </h1>"
+            }
+            else  {
+                document.getElementById("resultForGrade").innerHTML = "<h1>   Fail </h1>"
+            }
+            
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
